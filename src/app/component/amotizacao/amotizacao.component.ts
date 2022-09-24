@@ -15,7 +15,18 @@ export class AmotizacaoComponent implements OnInit {
 
   data: Array<any>;
 
-  constructor() {}
+  constructor() {
+    var i = 0;
+    this.data = [
+      {
+        mes: i,
+        prestacao: Number(this.prestacao),
+        juros: Number(this.taxa),
+        amort: Number(this.getAmortizacao()),
+        saldo: Number(this.saldo),
+      },
+    ];
+  }
 
   getResult() {
     for (var i = 1; i <= Number(this.meses); i++) {

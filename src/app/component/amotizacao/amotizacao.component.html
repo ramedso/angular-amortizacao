@@ -1,6 +1,9 @@
 <h2>Amortização - Tabela Price</h2>
 <br />
 <div>
+  <label for="saldo" id="saldo">Saldo: </label>
+  <input [(ngModel)]="saldo" /><br /><br />
+
   <label for="presenteValor" id="presenteValor">Presente Valor: </label>
   <input [(ngModel)]="presenteValor" /><br /><br />
 
@@ -21,9 +24,12 @@
       <th>Saldo devedor |</th>
     </thead>
     <tbody>
-      <tr>
-        <td>{{ getResult() }}</td>
-        <td></td>
+      <tr *ngFor="let result of data">
+        <td>{{ result.mes }}</td>
+        <td>{{ result.prestacao }}</td>
+        <td>{{ result.juros }}</td>
+        <td>{{ result.amort }}</td>
+        <td>{{ result.saldo }}</td>
       </tr>
     </tbody>
   </table>
